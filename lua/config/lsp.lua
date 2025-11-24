@@ -19,37 +19,16 @@ M.setup = function()
                 return
             end
 
-            -- if vim.tbl_contains(autoformat_filetypes, vim.bo.filetype) then
-            --     vim.api.nvim_create_autocmd("BufWritePre", {
-            --         buffer = args.buf,
-            --         callback = function()
-            --             vim.lsp.buf.format({
-            --                 formatting_options = { tabSize = 4, insertSpaces = true },
-            --                 bufnr = args.buf,
-            --                 id = client.id,
-            --             })
-            --         end,
-            --     })
-            -- end
-
-            -- utilise ceci à la place de ton bloc actuel qui crée BufWritePre
-            -- utilise ceci à la place de ton bloc actuel qui crée BufWritePre
             if vim.tbl_contains(autoformat_filetypes, vim.bo.filetype) then
                 vim.api.nvim_create_autocmd("BufWritePre", {
                     buffer = args.buf,
                     callback = function()
-                        -- récupère le client LSP attaché à ce buffer
                         local client = vim.lsp.get_client_by_id(args.data.client_id)
                         if not client then return end
-
-                        -- Vérifie si le client supporte le formatage (deux méthodes pour compat)
                         local can_format = false
-                        -- méthode recommandée (client:supports_method) si disponible
                         if type(client) == "table" and client.supports_method then
-                            -- client:supports_method est la forme la plus récente
                             pcall(function() if client:supports_method("textDocument/formatting") then can_format = true end end)
                         end
-                        -- fallback sur server_capabilities pour anciennes versions
                         if not can_format and client.server_capabilities then
                             if client.server_capabilities.documentFormattingProvider then can_format = true end
                         end
@@ -61,7 +40,6 @@ M.setup = function()
                                 id = client.id,
                             })
                         end
-                        -- sinon on ne fait rien (pas d'appel à format -> pas de notif)
                     end,
                 })
             end
@@ -69,18 +47,12 @@ M.setup = function()
                 vim.api.nvim_create_autocmd("BufWritePre", {
                     buffer = args.buf,
                     callback = function()
-                        -- récupère le client LSP attaché à ce buffer
                         local client = vim.lsp.get_client_by_id(args.data.client_id)
                         if not client then return end
-
-                        -- Vérifie si le client supporte le formatage (deux méthodes pour compat)
                         local can_format = false
-                        -- méthode recommandée (client:supports_method) si disponible
                         if type(client) == "table" and client.supports_method then
-                            -- client:supports_method est la forme la plus récente
                             pcall(function() if client:supports_method("textDocument/formatting") then can_format = true end end)
                         end
-                        -- fallback sur server_capabilities pour anciennes versions
                         if not can_format and client.server_capabilities then
                             if client.server_capabilities.documentFormattingProvider then can_format = true end
                         end
@@ -92,7 +64,6 @@ M.setup = function()
                                 id = client.id,
                             })
                         end
-                        -- sinon on ne fait rien (pas d'appel à format -> pas de notif)
                     end,
                 })
             end
@@ -146,7 +117,6 @@ M.setup = function()
 
                 local server = lspconfig[server_name]
 
-                -- Si server est nil, essaie quelques alias communs (adaptable)
                 if not server then
                     local alias_map = {
                         ts_ls        = "tsserver",
@@ -174,7 +144,6 @@ M.setup = function()
                             vim.log.levels.WARN)
                     end
                 else
-                    -- Ignorer proprement les noms non-LSP (ex: "copilot") sans casser le démarrage
                     vim.notify(("Skipping unknown/unsupported LSP server: " .. tostring(server_name)),
                         vim.log.levels.DEBUG)
                 end
@@ -235,7 +204,6 @@ M.setup = function()
 
                 lspconfig.pyright.setup({
                     root_dir = function(fname)
-                        -- cherche d'abord des marqueurs de projet, sinon prends le dossier du fichier ou le cwd
                         local root = util.root_pattern(
                             "pyproject.toml",
                             "setup.py",
