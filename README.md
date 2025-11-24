@@ -1,4 +1,4 @@
-# 🌟 nvim_jdtls_config
+# nvim_jdtls_config
 
 Configuration Neovim dédiée au support **Java LSP via jdtls**, conçue pour être **simple**, **modulaire** et **efficace**.  
 Le but de ce repo est d’offrir une base propre pour travailler en Java dans Neovim, que ce soit pour un setup personnel ou pour servir de template à d’autres.
@@ -32,8 +32,6 @@ Le but de ce repo est d’offrir une base propre pour travailler en Java dans Ne
 ---
 
 # 📁 Structure du dépôt
-
-
 
 .
 ├── ftplugin/
