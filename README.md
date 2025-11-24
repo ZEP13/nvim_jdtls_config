@@ -12,9 +12,6 @@ Le but de ce repo est d’offrir une base propre pour travailler en Java dans Ne
 - [✅ Prérequis](#-prérequis)  
 - [🔧 Installation](#-installation)  
 - [⚙️ Configuration jdtls (exemple complet)](#️-configuration-jdtls-exemple-complet)  
-- [🎮 Keybindings recommandés](#-keybindings-recommandés)  
-- [🧪 Debug Java (optionnel)](#-debug-java-optionnel)  
-- [❓ Dépannage](#-dépannage)  
 - [📄 Licence](#-licence)
 
 ---
