@@ -10,8 +10,7 @@ Le but de ce repo est d’offrir une base propre pour travailler en Java dans Ne
 - [🚀 Caractéristiques](#-caractéristiques)  
 - [📁 Structure du dépôt](#-structure-du-dépôt)  
 - [✅ Prérequis](#-prérequis)  
-- [🔧 Installation](#-installation)  
-- [⚙️ Configuration jdtls (exemple complet)](#️-configuration-jdtls-exemple-complet)  
+- [🔧 Installation](#-installation)
 - [📄 Licence](#-licence)
 
 ---
