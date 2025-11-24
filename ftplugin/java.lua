@@ -116,7 +116,6 @@ local config = {
     init_options = {
         bundles = bundles,
         extendedClientCapabilities = {
-            -- active les features avancées côté serveur
             advancedExtractRefactoringSupport = true,
             advancedOrganizeImportsSupport = true,
             classFileContentsSupport = true,
