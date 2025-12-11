@@ -5,7 +5,7 @@ Le but de ce repo est d’offrir une base propre pour travailler en Java dans Ne
 
 ---
 
-# 📚 Sommaire
+# Sommaire
 
 - [Caractéristiques](#-caractéristiques)  
 - [Structure du dépôt](#-structure-du-dépôt)  
