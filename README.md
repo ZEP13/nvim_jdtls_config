@@ -11,7 +11,7 @@ Le but de ce repo est d’offrir une base propre pour travailler en Java dans Ne
 - [Structure du dépôt](#-structure-du-dépôt)  
 - [Prérequis](#-prérequis)  
 - [Installation](#-installation)
-- [Licence](#-licence)
+
 
 ---
 
