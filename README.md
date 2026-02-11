@@ -29,14 +29,12 @@ Le but de ce repo est d’offrir une base propre pour travailler en Java dans Ne
 
 # Structure du dépôt
 ***
-'''
   .
   ├── ftplugin/
   │ └── java.lua # config jdtls qui se déclenche sur les fichiers Java
   ├── lua/
   │ └── … # fichiers de configuration Lua (LSP, jdtls, etc.)
   └── init.lua # point d’entrée de la config Neovim
-'''
 ***
 
 
